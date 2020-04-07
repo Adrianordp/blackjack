@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Black Jack</title>
+  <meta charset='utf-8'>
+  <script src='blackJack.js'></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Economica:400,700|Pacifico&display=swap">
+  <link rel="stylesheet" href="
+  https://meyerweb.com/eric/tools/css/reset/reset.css">
+  <link rel="stylesheet" href="blackJack.css">
+</head>
+
+<body class="fixed-width">
+  <header>
+    <h1>A card counting training room.</h1>
+  </header>
+  <section id="main-section">
+    <div id="dealer-space">
+      <p>Dealer cards:</p>
+      <ul class="clearfix card-box-display">
+        <li id='dealer-cards'></li>
+      </ul>
+      <p id="dealer-sum">0</p>
+    </div>
+    <div id="choices-space">
+      <button id="start-button" onclick='start_game()'>Start!</button>
+      <button id="hit-button" onclick='hit_card()'>Hit!</button>
+      <button id="stand-button" onclick='stand_hand()'>Stand!</button>
+      <button id="double-button" onclick='double_bet()'>x2!</button>
+      <button id="surrender-button" onclick='surrender_hand()'>Surrender!</button>
+      <button id="split-button" onclick='split_hand()'>Split!</button>
+    </div>
+    <div id="player-space">
+      <div id='bankroll'>Bankroll: </div>
+      <input type="text" id="bankroll-input" onkeydown="submit_bankroll(this)">
+      <div id='current-bet'>Current bet: </div>
+      <input type="text" id="current-bet-input" onkeydown="submit_bet(this)">
+      <p>Palyer cards:</p>
+      <ul class="clearfix card-box-display">
+        <li id='player-cards'></li>
+      </ul>
+      <p id="player-sum">0</p>
+    </div>
+    <div id="stats-space">
+      <!-- Stats space -->
+      <h2 id='running-count'>Count</h2>
+      <ul class="clearfix card-box-display">
+        <li id='drawed-card'>Past cards:<br></li>
+      </ul>
+    </div>
+  </section>
+</body>
+</html>
